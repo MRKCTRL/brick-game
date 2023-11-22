@@ -1,3 +1,15 @@
+from tkinter import *
+from turtle import Screen
+import random
+
+# width 800
+# height 600
+
+screen = Screen()
+screen.bgcolor('black')
+screen.setup(height=600,width=800)
+screen.title('Brick-Game')
+
 difficulty_level = input('what is your leve of difficulty? Easy, Normal or Hard: ')
 
 players = input('How many players will be playing? ')
@@ -38,8 +50,14 @@ def difficulty_level():
 def color_board():
     # color of the board
 
+def bonus_points():
+
+
 
 
 
 def speed():
 # hoq fast the ball comes
+
+
+screen.exitonclick()
