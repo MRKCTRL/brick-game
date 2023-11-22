@@ -1,7 +1,8 @@
-from tkinter import *
+from ball import Ball
 from turtle import Screen, Turtle
 import random
 from paddle import Paddle
+import time
 
 # width 800
 # height 600
@@ -14,6 +15,7 @@ screen.tracer(0)
 
 red_paddle = Paddle((350,0))
 blue_paddle = Paddle((350,0))
+ball = Ball()
 
 
 
@@ -26,7 +28,9 @@ screen.onkey(blue_paddle, 's')
 
 game_on = True
 while game_on:
+    time.sleep(0.2)
     screen.update()
+    ball.move
 
 
 difficulty_level = input('what is your leve of difficulty? Easy, Normal or Hard: ')
