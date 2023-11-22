@@ -1,4 +1,5 @@
 from turtle import Turtle
+import time
 
 
 class Power(Turtle):
