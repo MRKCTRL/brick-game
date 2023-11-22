@@ -1,6 +1,7 @@
 from tkinter import *
 from turtle import Screen, Turtle
 import random
+from paddle import Paddle
 
 # width 800
 # height 600
@@ -11,17 +12,17 @@ screen.setup(height=600,width=800)
 screen.title('Brick-Game')
 screen.tracer(0)
 
-paddle = Turtle()
-paddle.shape('sqaure')
-paddle.color('grey')
-paddle.shapesize(stretch_wid=5, stretch_len=1)
-paddle.penup()
-paddle.goto(350,0)
+red_paddle = Paddle((350,0))
+blue_paddle = Paddle((350,0))
+
 
 
 screen.listen()
-screen.onkey(go_left, 'Left')
-screen.onkey(go_right, 'Right')
+screen.onkey(red_paddle, 'Left')
+screen.onkey(red_paddle, 'Right')
+
+screen.onkey(blue_paddle, 'w')
+screen.onkey(blue_paddle, 's')
 
 game_on = True
 while game_on:
@@ -34,13 +35,7 @@ players = input('How many players will be playing? ')
 
 color_choice = input('What is the color of your board Red or Blue? ')
 
-def go_left():
-    new_y paddle.ycor() + 20
-    paddle.goto(paddle.xcor(), new_y)
 
-def go_right():
-    new_y = paddle.ycor() - 20
-    paddle.goto(paddle.xcor(), new_y)
 
 
 def power_up():
