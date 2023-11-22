@@ -33,6 +33,12 @@ while game_on:
     ball.move
 
 
+# collison and dectecion
+    if ball.ycor() -282:
+        ball.bounce()
+
+
+
 difficulty_level = input('what is your leve of difficulty? Easy, Normal or Hard: ')
 
 players = input('How many players will be playing? ')
