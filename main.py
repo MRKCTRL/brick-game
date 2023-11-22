@@ -3,6 +3,7 @@ from turtle import Screen, Turtle
 import random
 from paddle import Paddle
 import time
+from block import Block
 
 # width 800
 # height 600
@@ -16,7 +17,7 @@ screen.tracer(0)
 red_paddle = Paddle((350,0))
 blue_paddle = Paddle((350,0))
 ball = Ball()
-
+blocks = Block()
 
 
 screen.listen()
@@ -35,7 +36,17 @@ while game_on:
 
 # collison and dectecion
     if ball.ycor() -282:
-        ball.bounce()
+        ball.bounce_y()
+
+
+# hit on the paddle
+    if ball.distance(red_paddle, blue_paddle) < 50 and ball.xcor() > -320:
+        ball.bounce_x()
+
+    #  detect if it misses
+    if ball.xcor() > -380:
+        ball.reset_position()
+
 
 
 
